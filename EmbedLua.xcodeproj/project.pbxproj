@@ -1,0 +1,236 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32F58E9B14FABE3000F65A32 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32F58E9A14FABE3000F65A32 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		32F58E8414FAB9DF00F65A32 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		322FAC8E14FCD2DD00268B4B /* foo.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = foo.lua; sourceTree = "<group>"; };
+		322FAC9014FCDD8100268B4B /* LuaExposedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaExposedObject.h; sourceTree = "<group>"; };
+		32F58E8614FAB9DF00F65A32 /* EmbedLua */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EmbedLua; sourceTree = BUILT_PRODUCTS_DIR; };
+		32F58E9A14FABE3000F65A32 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		32F58EA414FACDC900F65A32 /* luna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luna.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32F58E8314FAB9DF00F65A32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32F58E7B14FAB9DF00F65A32 = {
+			isa = PBXGroup;
+			children = (
+				322FAC8E14FCD2DD00268B4B /* foo.lua */,
+				32F58E9914FABD7900F65A32 /* src */,
+				32F58E8714FAB9DF00F65A32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32F58E8714FAB9DF00F65A32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32F58E8614FAB9DF00F65A32 /* EmbedLua */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32F58E9914FABD7900F65A32 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				32F58E9A14FABE3000F65A32 /* main.cpp */,
+				32F58EA414FACDC900F65A32 /* luna.h */,
+				322FAC9014FCDD8100268B4B /* LuaExposedObject.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32F58E8514FAB9DF00F65A32 /* EmbedLua */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32F58E9014FAB9DF00F65A32 /* Build configuration list for PBXNativeTarget "EmbedLua" */;
+			buildPhases = (
+				32F58E8214FAB9DF00F65A32 /* Sources */,
+				32F58E8314FAB9DF00F65A32 /* Frameworks */,
+				32F58E8414FAB9DF00F65A32 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmbedLua;
+			productName = EmbedLua;
+			productReference = 32F58E8614FAB9DF00F65A32 /* EmbedLua */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32F58E7D14FAB9DF00F65A32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = INFN;
+			};
+			buildConfigurationList = 32F58E8014FAB9DF00F65A32 /* Build configuration list for PBXProject "EmbedLua" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 32F58E7B14FAB9DF00F65A32;
+			productRefGroup = 32F58E8714FAB9DF00F65A32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32F58E8514FAB9DF00F65A32 /* EmbedLua */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32F58E8214FAB9DF00F65A32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32F58E9B14FABE3000F65A32 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		32F58E8E14FAB9DF00F65A32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		32F58E8F14FAB9DF00F65A32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		32F58E9114FAB9DF00F65A32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/lib,
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-llua",
+					"-ldl",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		32F58E9214FAB9DF00F65A32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/lib,
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-llua",
+					"-ldl",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32F58E8014FAB9DF00F65A32 /* Build configuration list for PBXProject "EmbedLua" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32F58E8E14FAB9DF00F65A32 /* Debug */,
+				32F58E8F14FAB9DF00F65A32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32F58E9014FAB9DF00F65A32 /* Build configuration list for PBXNativeTarget "EmbedLua" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32F58E9114FAB9DF00F65A32 /* Debug */,
+				32F58E9214FAB9DF00F65A32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32F58E7D14FAB9DF00F65A32 /* Project object */;
+}
