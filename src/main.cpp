@@ -96,22 +96,64 @@ void lua_stacktrace(lua_State* L)
         }
 }
                 
-void HookRoutine(lua_State *L, lua_Debug *ar)
+static void LuaHookCall (lua_State *lua)
 {
-
-        // Only listen to "Hook Lines" events
-    if(ar->event == LUA_MASKCALL)
+    
+    printf ("---- Call Stack ----\n");
+        //   printf ("[Level] [Function] [# args] [@line] [src]\n");
+    
+    lua_Debug ar;
+        // Look at call stack
+    for (int iLevel = 0; lua_getstack (lua, iLevel, &ar) != 0; ++iLevel)
         {
-         
-            // Check the global flag to know if we should abort
-        if(bAbortScript)
+        if (lua_getinfo (lua, "Snlu", &ar) != 0)
             {
-                // Ok, let's abort the script
-            lua_pushstring(L, "HookRoutine: Abort requested!");
-            lua_error(L);
+            printf ("%d %s %s %d @%d %s\n", iLevel, ar.namewhat, ar.name, ar.nups, ar.currentline, ar.source);
             }
         }
 }
+
+static void LuaHookRet (lua_State *lua)
+{
+    
+}
+
+static void LuaHookLine (lua_State *lua)
+{
+    lua_Debug ar;
+    lua_getstack (lua, 0, &ar);
+    
+    if (lua_getinfo (lua, "Sl", &ar) != 0)
+        {
+        printf ("exe %s on line %d\n", ar.short_src, ar.currentline);
+        }
+}
+
+static void LuaHookCount (lua_State *lua)
+{
+    LuaHookLine (lua);
+}
+
+static void LuaHook (lua_State *lua, lua_Debug *ar)
+{
+        // Handover to the correct hook
+    switch (ar->event)
+    {
+        case LUA_HOOKCALL:
+        LuaHookCall (lua);
+        break;
+        case LUA_HOOKRET:
+        LuaHookRet (lua);
+        break;
+        case LUA_HOOKLINE:
+        LuaHookLine (lua);
+        break;
+        case LUA_HOOKCOUNT:
+        LuaHookCount (lua);
+        break;
+    }
+}
+
 
 void report_errors(lua_State *L, int status)
 {
@@ -135,8 +177,8 @@ int main()
     
     Luna<Foo>::Register(L);
     
-    luaL_loadfile(L, "/Volumes/DeepData/Sorgenti/vari/EmbedLua/foo.lua");
-    lua_sethook(L, HookRoutine, LUA_MASKCALL, 1);
+    luaL_loadfile(L, "/Coding/Sorgenti/gitrepos/EmbedLua/foo.lua");
+    lua_sethook(L, LuaHook, LUA_MASKCOUNT, 1);
    
     if ( (s=lua_pcall(L, 0, LUA_MULTRET, 0)) != 0){
         report_errors(L, s);
